@@ -1,0 +1,97 @@
+\documentclass{article}
+
+% No \usepackage commands – everything here is part of plain LaTeX
+
+\title{A Sample Document for Testing GitHub Pages}
+\author{Test User}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This document is meant to test the LaTeX compilation pipeline on GitHub Pages.
+It includes sections, mathematical expressions, a table, a figure, cross‑references,
+citations, and a bibliography — all using only built‑in LaTeX features.
+\end{abstract}
+
+\section{Introduction}
+This is a simple test document. It shows how to structure a paper without relying on
+external packages. We can cite a well‑known book~\cite{knuth:1984} or a research article~\cite{lamport:1994}.
+
+\section{Mathematical Content}
+Mathematics can be written inline, like $E = mc^2$, or displayed:
+
+\[
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}.
+\]
+
+We can also number equations using the \texttt{equation} environment:
+\begin{equation}
+\label{eq:identity}
+\sum_{i=1}^{n} i = \frac{n(n+1)}{2}.
+\end{equation}
+Equation~\eqref{eq:identity} is a classic identity.
+
+\section{Tables and Lists}
+A simple table:
+\begin{center}
+\begin{tabular}{|l|c|r|}
+\hline
+\textbf{Item} & \textbf{Quantity} & \textbf{Price} \\
+\hline
+Apple & 3 & \$1.50 \\
+Orange & 2 & \$1.00 \\
+\hline
+\end{tabular}
+\captionof{table}{Fruit prices}  % \captionof is not standard; use \caption inside table environment
+\end{center}
+
+Instead, we place the table inside a \texttt{table} environment to get a caption:
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|r|}
+\hline
+\textbf{Item} & \textbf{Quantity} & \textbf{Price} \\
+\hline
+Apple & 3 & \$1.50 \\
+Orange & 2 & \$1.00 \\
+\hline
+\end{tabular}
+\caption{Fruit prices}
+\label{tab:prices}
+\end{table}
+
+Table~\ref{tab:prices} shows some sample data.
+
+An itemised list:
+\begin{itemize}
+\item First point.
+\item Second point, with a sublist:
+  \begin{enumerate}
+  \item Subitem one.
+  \item Subitem two.
+  \end{enumerate}
+\item Third point.
+\end{itemize}
+
+\section{Figures}
+We can include a figure without any external graphics package by using the \texttt{picture} environment or simply a \texttt{\string\rule} to draw a box:
+\begin{figure}[h]
+\centering
+\rule{4cm}{2cm}  % a black rectangle
+\caption{A simple figure made with \texttt{\string\rule}.}
+\label{fig:rule}
+\end{figure}
+Figure~\ref{fig:rule} shows a placeholder graphic.
+
+\section{Conclusion}
+This document has demonstrated several basic LaTeX features. For more advanced
+typography, one would normally load packages like \texttt{amsmath}, \texttt{graphicx}, etc.
+However, even with only the built‑in commands, a well‑structured document can be produced.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
